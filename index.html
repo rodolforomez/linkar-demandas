@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkar - Solicitação de Demandas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <!-- Header com Logo -->
+            <div class="header">
+                <div class="logo">
+                    <h1>LINKAR</h1>
+                </div>
+                <h2 class="title">Envie sua solicitação!</h2>
+                <p class="subtitle">Preencha o formulário abaixo com todos os detalhes da sua demanda. Nossa equipe receberá automaticamente sua solicitação.</p>
+            </div>
+
+            <!-- Formulário -->
+            <form id="demandForm">
+                <!-- Solicitante -->
+                <div class="form-group">
+                    <label for="solicitante">Solicitante *</label>
+                    <select id="solicitante" name="solicitante" required>
+                        <option value="">Selecione quem está solicitando</option>
+                        <option value="João Silva">João Silva</option>
+                        <option value="Maria Santos">Maria Santos</option>
+                        <option value="Pedro Costa">Pedro Costa</option>
+                        <option value="Ana Oliveira">Ana Oliveira</option>
+                        <option value="Financeiro">Departamento Financeiro</option>
+                        <option value="Comercial">Departamento Comercial</option>
+                        <option value="Marketing">Departamento de Marketing</option>
+                        <option value="RH">Recursos Humanos</option>
+                    </select>
+                </div>
+
+                <!-- Tipo da Solicitação -->
+                <div class="form-group">
+                    <label for="tipoSolicitacao">Tipo da Solicitação *</label>
+                    <select id="tipoSolicitacao" name="tipoSolicitacao" required>
+                        <option value="">Selecione o tipo de serviço</option>
+                        <option value="Arte para Redes Sociais">Arte para Redes Sociais</option>
+                        <option value="Edição de Vídeo">Edição de Vídeo</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Tráfego Pago">Tráfego Pago</option>
+                        <option value="Design Gráfico">Design Gráfico</option>
+                        <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                        <option value="Copywriting">Copywriting</option>
+                        <option value="Consultoria">Consultoria</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <!-- Detalhes da Solicitação -->
+                <div class="form-group">
+                    <label for="detalhes">Detalhes da Solicitação *</label>
+                    <textarea 
+                        id="detalhes" 
+                        name="detalhes" 
+                        rows="6" 
+                        required
+                        placeholder="Explique o que você precisa... INVISTA TEMPO na descrição para que possamos entender melhor sua demanda e entregar exatamente o que você espera.&#10;&#10;Inclua:&#10;• Objetivo da solicitação&#10;• Público-alvo&#10;• Referências ou exemplos&#10;• Especificações técnicas (se houver)&#10;• Qualquer outra informação relevante"></textarea>
+                    <span class="char-count" id="charCount">0 caracteres</span>
+                </div>
+
+                <!-- Prazo de Entrega -->
+                <div class="form-group">
+                    <label for="prazo">Prazo de Entrega *</label>
+                    <input type="date" id="prazo" name="prazo" required>
+                    <span class="helper-text">Selecione uma data futura para a entrega</span>
+                </div>
+
+                <!-- Anexos (opcional) -->
+                <div class="form-group">
+                    <label for="anexos">Anexos (opcional)</label>
+                    <input type="file" id="anexos" name="anexos" multiple accept="image/*,.pdf,.doc,.docx">
+                    <span class="helper-text">Imagens, PDFs ou documentos de referência</span>
+                </div>
+
+                <!-- Mensagens de Feedback -->
+                <div id="feedbackMessage" class="feedback-message hidden"></div>
+
+                <!-- Botão de Envio -->
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text">ENVIAR SOLICITAÇÃO</span>
+                    <span class="btn-loader hidden">
+                        <span class="loader"></span>
+                        Enviando...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

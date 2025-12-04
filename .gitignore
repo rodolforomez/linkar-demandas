@@ -23,6 +23,9 @@ build/
 .env
 .env.local
 
+# Configurações sensíveis do Trello
+config.js
+
 # Logs
 *.log
 logs/
